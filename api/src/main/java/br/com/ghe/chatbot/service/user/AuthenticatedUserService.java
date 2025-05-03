@@ -1,6 +1,6 @@
 package br.com.ghe.chatbot.service.user;
 
-import br.com.ghe.chatbot.domain.User;
+import br.com.ghe.chatbot.domain.UserDomain;
 import br.com.ghe.chatbot.exception.ResourceNotFound;
 import br.com.ghe.chatbot.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ public class AuthenticatedUserService {
         return jwt.getClaim(ID_CLAIM);
     }
 
-    public User get() {
+    public UserDomain get() {
         return userRepository.findByEmail(getId())
                 .orElseThrow(() -> new ResourceNotFound("Usuário não encontrado!"));
     }

@@ -1,6 +1,6 @@
 package br.com.ghe.chatbot.service.user.search;
 
-import br.com.ghe.chatbot.domain.User;
+import br.com.ghe.chatbot.domain.UserDomain;
 import br.com.ghe.chatbot.exception.ResourceNotFound;
 import br.com.ghe.chatbot.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ public class SearchUserService {
 
     private final UserRepository userRepository;
 
-    public User findByEmail(String email){
+    public UserDomain findByEmail(String email){
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFound("Usuário não autorizado"));
     }

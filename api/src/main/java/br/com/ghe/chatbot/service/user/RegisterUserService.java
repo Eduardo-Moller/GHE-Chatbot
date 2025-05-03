@@ -1,6 +1,6 @@
 package br.com.ghe.chatbot.service.user;
 
-import br.com.ghe.chatbot.domain.User;
+import br.com.ghe.chatbot.domain.UserDomain;
 import br.com.ghe.chatbot.controller.dto.response.user.UserResponse;
 import br.com.ghe.chatbot.controller.dto.request.user.RegisterUserRequest;
 import br.com.ghe.chatbot.repository.UserRepository;
@@ -28,7 +28,7 @@ public class RegisterUserService {
 
         uniqueEmailValidatorService.validate(request.getEmail());
 
-        User user = toEntity(request);
+        UserDomain user = toEntity(request);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setCreatedAt(nowService.now());
 

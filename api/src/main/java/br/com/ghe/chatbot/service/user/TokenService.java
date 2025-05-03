@@ -1,6 +1,6 @@
 package br.com.ghe.chatbot.service.user;
 
-import br.com.ghe.chatbot.domain.User;
+import br.com.ghe.chatbot.domain.UserDomain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
@@ -19,7 +19,7 @@ public class TokenService {
 
     private final JwtEncoder jwtEncoder;
 
-    public String createToken(User user) {
+    public String createToken(UserDomain user) {
         JwtClaimsSet jwt = JwtClaimsSet.builder()
                 .issuer(ISSUER)
                 .subject(user.getName())
