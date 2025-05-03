@@ -18,6 +18,7 @@ public class MessageDomain extends BaseDomain{
 
     private String text;
 
+    @Enumerated(EnumType.STRING)
     private TypeEnum type;
 
     @ManyToOne
