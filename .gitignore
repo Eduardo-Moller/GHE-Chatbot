@@ -1,0 +1,10 @@
+### Keys ###
+/api/src/main/resources/key.pem
+/api/src/main/resources/key.pub
+
+### Properties ###
+/api/src/main/resources/application.yml
+
+### Java ###
+/api/target/
+/api/.idea
