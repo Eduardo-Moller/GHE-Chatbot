@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ghe_chatbot_db
     username: postgres
-    password: postgres
+    password: 1234
 
   jpa:
     hibernate:

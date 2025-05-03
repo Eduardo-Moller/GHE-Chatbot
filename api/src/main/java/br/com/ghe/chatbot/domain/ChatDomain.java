@@ -1,15 +1,14 @@
 package br.com.ghe.chatbot.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter @Setter
 @Entity(name = "chat")
 public class ChatDomain extends BaseDomain {
 

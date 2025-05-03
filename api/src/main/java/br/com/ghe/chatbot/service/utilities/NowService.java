@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Service
 public class NowService {
 
-    public LocalDateTime now() {
+    public static LocalDateTime now() {
         return LocalDateTime.now();
     }
 }
