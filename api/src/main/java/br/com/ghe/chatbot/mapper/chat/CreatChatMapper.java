@@ -1,7 +1,7 @@
 package br.com.ghe.chatbot.mapper.chat;
 
-import br.com.ghe.chatbot.controller.dto.request.CreateChatRequest;
-import br.com.ghe.chatbot.controller.dto.response.CreatChatResponse;
+import br.com.ghe.chatbot.controller.dto.request.chat.CreateChatRequest;
+import br.com.ghe.chatbot.controller.dto.response.chat.CreatChatResponse;
 import br.com.ghe.chatbot.domain.ChatDomain;
 import br.com.ghe.chatbot.domain.UserDomain;
 

@@ -1,4 +1,4 @@
-package br.com.ghe.chatbot.controller.dto.response;
+package br.com.ghe.chatbot.controller.dto.response.chat;
 
 import lombok.*;
 

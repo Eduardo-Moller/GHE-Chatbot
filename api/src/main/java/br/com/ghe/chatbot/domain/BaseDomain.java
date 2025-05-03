@@ -1,6 +1,5 @@
 package br.com.ghe.chatbot.domain;
 
-import br.com.ghe.chatbot.service.utilities.NowService;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -22,7 +21,7 @@ public abstract class BaseDomain {
 
     @PrePersist
     private void prePersist() {
-        this.createdAt = now().plusDays(2L);
+        this.createdAt = now();
     }
 
     @PreUpdate
