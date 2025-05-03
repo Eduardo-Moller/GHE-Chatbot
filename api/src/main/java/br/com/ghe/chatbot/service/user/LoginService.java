@@ -1,6 +1,6 @@
 package br.com.ghe.chatbot.service.user;
 
-import br.com.ghe.chatbot.domain.User;
+import br.com.ghe.chatbot.domain.UserDomain;
 import br.com.ghe.chatbot.controller.dto.request.user.LoginRequest;
 import br.com.ghe.chatbot.controller.dto.response.user.LoginResponse;
 import br.com.ghe.chatbot.service.user.search.SearchUserService;
@@ -20,7 +20,7 @@ public class LoginService {
 
     public LoginResponse login(LoginRequest request) {
 
-        User user = searchUserService.findByEmail(request.getEmail());
+        UserDomain user = searchUserService.findByEmail(request.getEmail());
 
         isValidPasswordValidatorService.validate(request.getPassword(), user);
 

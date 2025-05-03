@@ -4,19 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.time.LocalDateTime;
-
-@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "users")
-public class User {
+public class UserDomain extends BaseDomain{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,5 +19,4 @@ public class User {
     private String name;
     private String email;
     private String password;
-    private LocalDateTime createdAt;
 }
