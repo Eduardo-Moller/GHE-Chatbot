@@ -7,10 +7,9 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Entity(name = "users")
-public class UserDomain extends BaseDomain{
+public class UserDomain extends BaseDomain {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

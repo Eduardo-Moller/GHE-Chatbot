@@ -1,11 +1,13 @@
 package br.com.ghe.chatbot.domain;
 
 import jakarta.persistence.MappedSuperclass;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @MappedSuperclass
 public abstract class BaseDomain {
 

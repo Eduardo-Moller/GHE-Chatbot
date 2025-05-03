@@ -17,14 +17,14 @@ public class AuthenticatedUserService {
 
     private final UserRepository userRepository;
 
-    public String getId() {
+    public Long getId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Jwt jwt = (Jwt) authentication.getCredentials();
         return jwt.getClaim(ID_CLAIM);
     }
 
     public UserDomain get() {
-        return userRepository.findByEmail(getId())
+        return userRepository.findById(getId())
                 .orElseThrow(() -> new ResourceNotFound("Usuário não encontrado!"));
     }
 }
