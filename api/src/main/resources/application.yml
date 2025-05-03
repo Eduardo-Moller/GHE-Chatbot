@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ghe_chatbot_db
     username: postgres
-    password: 1234
+    password: postgres
 
   jpa:
     hibernate:
@@ -18,6 +18,6 @@ server:
 
 jwt:
   public:
-    key: classpath:authz.pub
+    key: classpath:key.pub
   private:
-    key: classpath:authz.pem
+    key: classpath:key.pem

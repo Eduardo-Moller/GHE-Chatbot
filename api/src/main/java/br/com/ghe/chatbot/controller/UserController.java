@@ -1,11 +1,11 @@
 package br.com.ghe.chatbot.controller;
 
-import br.com.ghe.chatbot.dto.request.LoginRequest;
-import br.com.ghe.chatbot.dto.request.RegisterUserRequest;
-import br.com.ghe.chatbot.dto.response.LoginResponse;
-import br.com.ghe.chatbot.dto.response.UserResponse;
-import br.com.ghe.chatbot.service.LoginService;
-import br.com.ghe.chatbot.service.RegisterUserService;
+import br.com.ghe.chatbot.controller.dto.request.user.LoginRequest;
+import br.com.ghe.chatbot.controller.dto.request.user.RegisterUserRequest;
+import br.com.ghe.chatbot.controller.dto.response.user.LoginResponse;
+import br.com.ghe.chatbot.controller.dto.response.user.UserResponse;
+import br.com.ghe.chatbot.service.user.LoginService;
+import br.com.ghe.chatbot.service.user.RegisterUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
