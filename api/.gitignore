@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Keys ###
+/src/main/resources/key.pem
+/src/main/resources/key.pub
+
+### Properties ###
+/src/main/resources/application.yml
