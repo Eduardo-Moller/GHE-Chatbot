@@ -2,6 +2,7 @@ package br.com.ghe.chatbot.service.user;
 
 import br.com.ghe.chatbot.controller.dto.request.user.RegisterUserRequest;
 import br.com.ghe.chatbot.domain.UserDomain;
+import br.com.ghe.chatbot.mapper.user.RegisterUserMapper;
 import br.com.ghe.chatbot.repository.UserRepository;
 import br.com.ghe.chatbot.service.user.validators.UniqueEmailValidatorService;
 import br.com.ghe.chatbot.service.utilities.NowService;
@@ -39,6 +40,9 @@ class RegisterUserServiceTest {
     @Mock
     private NowService nowService;
 
+    @Mock
+    private RegisterUserMapper registerUserMapper;
+
     @Captor
     private ArgumentCaptor<UserDomain> userCaptor;
 
@@ -49,8 +53,15 @@ class RegisterUserServiceTest {
         RegisterUserRequest request = easyRandom.nextObject(RegisterUserRequest.class);
         LocalDateTime now = easyRandom.nextObject(LocalDateTime.class);
 
+        UserDomain userMapped = UserDomain.builder()
+                .name(request.getName())
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .build();
+
         when(nowService.now()).thenReturn(now);
         when(passwordEncoder.encode(request.getPassword())).thenReturn(request.getPassword());
+        when(registerUserMapper.toEntity(request)).thenReturn(userMapped);
 
         tested.register(request);
 

@@ -1,14 +1,13 @@
 package br.com.ghe.chatbot.mapper.user;
 
 import br.com.ghe.chatbot.controller.dto.response.user.LoginResponse;
-import lombok.experimental.UtilityClass;
+import org.mapstruct.Mapper;
 
-@UtilityClass
-public class LoginMapper {
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+import static org.mapstruct.ReportingPolicy.ERROR;
 
-    public static LoginResponse toResponse(String accessToken) {
-        return LoginResponse.builder()
-                .accessToken(accessToken)
-                .build();
-    }
+@Mapper(componentModel = SPRING, unmappedTargetPolicy = ERROR)
+public interface LoginMapper {
+
+    LoginResponse toResponse(String accessToken);
 }
