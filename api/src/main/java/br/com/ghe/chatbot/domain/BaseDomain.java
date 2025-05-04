@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-import static br.com.ghe.chatbot.service.utilities.NowService.*;
+import static java.time.LocalDateTime.now;
 
 @Getter
 @Setter
