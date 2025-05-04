@@ -5,7 +5,7 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	delete boolean default false,
+	deleted boolean default false,
     PRIMARY KEY (id)
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE chat (
     user_id BIGINT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	delete boolean default false,
+	deleted boolean default false,
     CONSTRAINT fk_chat_user_id FOREIGN KEY (user_id) REFERENCES users(id),
     PRIMARY KEY (id)
 );
@@ -27,7 +27,7 @@ CREATE TABLE message (
 	type varchar(50) not null,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	delete boolean default false,
+	deleted boolean default false,
     CONSTRAINT fk_message_chat_id FOREIGN KEY (chat_id) REFERENCES chat(id),
     CONSTRAINT ck_chat_type check (type in ('USER', 'BOT')),
     PRIMARY KEY (id)
