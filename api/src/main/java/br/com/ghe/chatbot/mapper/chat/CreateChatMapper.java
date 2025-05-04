@@ -1,11 +1,13 @@
 package br.com.ghe.chatbot.mapper.chat;
 
 import br.com.ghe.chatbot.controller.dto.request.chat.CreateChatRequest;
-import br.com.ghe.chatbot.controller.dto.response.chat.CreatChatResponse;
+import br.com.ghe.chatbot.controller.dto.response.chat.CreateChatResponse;
 import br.com.ghe.chatbot.domain.ChatDomain;
 import br.com.ghe.chatbot.domain.UserDomain;
+import lombok.experimental.UtilityClass;
 
-public class CreatChatMapper {
+@UtilityClass
+public class CreateChatMapper {
 
     public static ChatDomain toEntity(UserDomain user, CreateChatRequest request) {
         return ChatDomain.builder()
@@ -14,8 +16,8 @@ public class CreatChatMapper {
                 .build();
     }
 
-    public static CreatChatResponse toResponse(ChatDomain entity) {
-        return CreatChatResponse.builder()
+    public static CreateChatResponse toResponse(ChatDomain entity) {
+        return CreateChatResponse.builder()
                 .id(entity.getId())
                 .name(entity.getName())
                 .build();

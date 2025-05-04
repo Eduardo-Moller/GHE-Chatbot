@@ -4,7 +4,7 @@ import lombok.*;
 
 @Builder
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class CreatChatResponse {
+public class CreateChatResponse {
 
     private Long id;
     private String name;

@@ -2,7 +2,7 @@ package br.com.ghe.chatbot.controller;
 
 import br.com.ghe.chatbot.controller.dto.request.chat.CreateChatRequest;
 import br.com.ghe.chatbot.controller.dto.response.chat.ChatResponse;
-import br.com.ghe.chatbot.controller.dto.response.chat.CreatChatResponse;
+import br.com.ghe.chatbot.controller.dto.response.chat.CreateChatResponse;
 import br.com.ghe.chatbot.service.chat.CreateChatService;
 import br.com.ghe.chatbot.service.chat.ListChatsService;
 import jakarta.validation.Valid;
@@ -20,7 +20,7 @@ public class ChatController {
     private final ListChatsService listChatsService;
 
     @PostMapping
-    public CreatChatResponse create(@Valid @RequestBody CreateChatRequest request){
+    public CreateChatResponse create(@Valid @RequestBody CreateChatRequest request){
         return createChatService.create(request);
     }
 
