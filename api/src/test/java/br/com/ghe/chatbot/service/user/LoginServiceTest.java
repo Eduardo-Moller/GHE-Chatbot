@@ -3,7 +3,6 @@ package br.com.ghe.chatbot.service.user;
 import br.com.ghe.chatbot.controller.dto.request.user.LoginRequest;
 import br.com.ghe.chatbot.controller.dto.response.user.LoginResponse;
 import br.com.ghe.chatbot.domain.UserDomain;
-import br.com.ghe.chatbot.mapper.user.LoginMapper;
 import br.com.ghe.chatbot.service.user.search.SearchUserService;
 import br.com.ghe.chatbot.service.user.validators.IsValidPasswordValidatorService;
 import org.jeasy.random.EasyRandom;
@@ -32,9 +31,6 @@ class LoginServiceTest {
     @Mock
     private IsValidPasswordValidatorService isValidPasswordValidatorService;
 
-    @Mock
-    private LoginMapper loginMapper;
-
     @DisplayName("Should login successfully when provided with valid credentials")
     @Test
     void shouldLoginSuccessfully_WhenProvidedWithValidCredentials() {
@@ -43,13 +39,8 @@ class LoginServiceTest {
         UserDomain user = easyRandom.nextObject(UserDomain.class);
         String accessToken = easyRandom.nextObject(String.class);
 
-        LoginResponse loginResponseMapped = LoginResponse.builder()
-                .accessToken(accessToken)
-                .build();
-
         when(searchUserService.findByEmail(request.getEmail())).thenReturn(user);
         when(tokenService.createToken(user)).thenReturn(accessToken);
-        when(loginMapper.toResponse(accessToken)).thenReturn(loginResponseMapped);
 
         LoginResponse response = tested.login(request);
 
